@@ -19,4 +19,7 @@ deploy:
 mytest:
 	echo "TEST"
 
+build:
+	# build docker image
+
 all: install lint test deploy
