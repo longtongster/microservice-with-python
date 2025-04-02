@@ -4,6 +4,8 @@ install:
 	poetry install --no-root
 format:
 	# format code
+	black *.py mylib/*.py
+	
 lint:
 	# flake8
 
