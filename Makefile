@@ -12,6 +12,7 @@ lint:
 
 test:
 	# test
+	poetry run pytest -vv --cov=mylib test_logic.py
 
 deploy:
 	# deploy
