@@ -1,5 +1,7 @@
 install:
-	# install commands
+	# install commands - first activate with `poetry shell`
+	poetry lock &&\
+	poetry install --no-root
 format:
 	# format code
 lint:
