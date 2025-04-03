@@ -21,6 +21,9 @@ COPY pyproject.toml poetry.lock ./
 # Install dependencies using Poetry (without creating a virtualenv)
 RUN poetry config virtualenvs.create false && poetry install --no-interaction --no-root
 
+# Needed for nltk used by the phrases endpoint
+RUN poetry run python -m textblob.download_corpora
+
 # Copy the rest of the application code
 COPY . .
 

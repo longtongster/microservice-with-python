@@ -23,6 +23,14 @@ mytest:
 
 build:
 	# build docker image
-	docker build -t wiki-app .
+	docker build -t wiki-app-image .
+
+run: build
+	# run a docker container from the wiki-app image
+	docker run --name wiki-app-container --rm -p 8080:8080 -d wiki-app-image
+
+stop: 
+	# stop the container from running
+	docker stop wiki-app-container 
 
 all: install lint test deploy
