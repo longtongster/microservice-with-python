@@ -2,6 +2,7 @@ install:
 	# install commands - first activate with `poetry shell`
 	poetry lock &&\
 	poetry install --no-root
+
 format:
 	# format code
 	poetry run black *.py mylib/*.py
@@ -12,7 +13,7 @@ lint:
 
 test:
 	# test
-	poetry run pytest -vv --cov=mylib test_logic.py
+	poetry run pytest -vv --cov=mylib --cov=main test_*.py
 
 deploy:
 	# deploy

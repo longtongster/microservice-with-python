@@ -11,6 +11,8 @@ wikipedia="*"
 fire="*"
 fastapi="*"
 uvicorn="*"
+textblob="*"
+httpx="*"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "*"
