@@ -23,5 +23,6 @@ mytest:
 
 build:
 	# build docker image
+	docker build -t wiki-app .
 
 all: install lint test deploy
