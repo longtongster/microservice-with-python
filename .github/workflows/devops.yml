@@ -5,6 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    
     - name: Set up Python 3.10.16
       uses: actions/setup-python@v1
       with:
@@ -16,13 +17,13 @@ jobs:
     - name: Install Poetry
       run: pipx install poetry
 
-    - name: Download TextBlob corpora
-      run: python -m textblob.download_corpora
-
     - name: Install dependencies
       run: |
         make install
         
+    - name: Download TextBlob corpora
+      run: poetry run python -m textblob.download_corpora  # Use Poetry environment
+
     - name: Lint with pylint
       run: |
         make lint
@@ -34,5 +35,3 @@ jobs:
     - name: Format code
       run: |
         make format
-    
-    
