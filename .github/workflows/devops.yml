@@ -35,3 +35,7 @@ jobs:
     - name: Format code
       run: |
         make format
+
+    - name: Build image
+      run: |
+        make build
