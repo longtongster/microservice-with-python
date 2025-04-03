@@ -16,6 +16,9 @@ jobs:
     - name: Install Poetry
       run: pipx install poetry
 
+    - name: Download TextBlob corpora
+      run: python -m textblob.download_corpora
+
     - name: Install dependencies
       run: |
         make install
